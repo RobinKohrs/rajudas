@@ -1,6 +1,7 @@
 #' Download all the avaiable stations for the ZAMG daily products
 #' @importFrom  httr GET content
 #' @importFrom  cli cli_h2
+#' @importFrom  sf st_as_sf
 
 
 #' @export
@@ -30,6 +31,8 @@ getZamgStations = function(url = "https://dataset.api.hub.zamg.ac.at/v1/station/
     return(df)
   }) %>% do.call("rbind", .)
 
+  stations = st_as_sf(stations, coords = c("lat", "lon"), crs=4326)
+
   if (!is.null(outputPath)) {
     cli::cli_h2("Writing data...")
     write.csv(stations, outputPath)
@@ -38,4 +41,7 @@ getZamgStations = function(url = "https://dataset.api.hub.zamg.ac.at/v1/station/
 
   cli::cli_h2("Returning data in memory")
   return(stations)
+
+
+
 }
