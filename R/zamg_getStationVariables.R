@@ -5,7 +5,7 @@
 #' @export
 
 
-getZamgVariables = function(
+zamg_getStationVariables = function(
     url = "https://dataset.api.hub.zamg.ac.at/v1/station/historical/klima-v1-1d/metadata",
     outputPath = NULL
 

@@ -1,0 +1,57 @@
+#' Get data from Zamg Station data
+#' @import glue
+#' @import httr
+#'
+#' @export
+
+
+zamg_getPointData = function(
+  dataset = "1d",
+  stationId = NULL,
+  parameter = NULL,
+  start = NULL,
+  end = NULL
+){
+
+
+
+  if (any(unlist(lapply(
+    list(dataset,
+         stationId,
+         parameter,
+         start,
+         end), is.null
+  ))))  {
+    stop("Parameter missing")
+  }
+
+
+  # format the paramers if more than one ------------------------------------
+  if (length(parameters) > 1) {
+    if (!is.character(parameters)){
+      stop("paramters must be a characeter vector")
+    }
+    parameters = paste0(parameters, collapse = ",")
+  }
+
+
+
+
+
+  # build the url -----------------------------------------------------------
+  url = glue("https://dataset.api.hub.zamg.ac.at/v1/station/historical/klima-v1-{dataset}?parameters={parameters}&start={start}T08:00&end={end}&station_ids=5904")
+
+
+  # download the data -------------------------------------------------------
+  response = zamg_sendRequest(url)
+
+
+  # clean the data ----------------------------------------------------------
+  dataClean = zamg_cleanStationData(response)
+
+
+  # return cleanded data ----------------------------------------------------
+  return(dataClean)
+
+}
+
