@@ -7,7 +7,7 @@
 zamg_getPointData(
   dataset = "1d",
   stationId = NULL,
-  parameter = NULL,
+  parameters = NULL,
   start = NULL,
   end = NULL
 )

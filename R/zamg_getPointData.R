@@ -8,7 +8,7 @@
 zamg_getPointData = function(
   dataset = "1d",
   stationId = NULL,
-  parameter = NULL,
+  parameters = NULL,
   start = NULL,
   end = NULL
 ){
@@ -18,7 +18,7 @@ zamg_getPointData = function(
   if (any(unlist(lapply(
     list(dataset,
          stationId,
-         parameter,
+         parameters,
          start,
          end), is.null
   ))))  {
@@ -33,9 +33,6 @@ zamg_getPointData = function(
     }
     parameters = paste0(parameters, collapse = ",")
   }
-
-
-
 
 
   # build the url -----------------------------------------------------------
