@@ -2,6 +2,7 @@
 
 export("%>%")
 export(getZamgStations)
+export(getZamgVariables)
 export(makePath)
 importFrom(cli,cli_h2)
 importFrom(dplyr,filter)
