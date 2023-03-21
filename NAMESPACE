@@ -2,6 +2,7 @@
 
 export("%>%")
 export(makePath)
+export(zamg_download1x1)
 export(zamg_downloadStations)
 export(zamg_getPointData)
 export(zamg_getStationVariables)
@@ -15,4 +16,5 @@ importFrom(httr,content)
 importFrom(magrittr,"%>%")
 importFrom(rlang,enquo)
 importFrom(sf,st_as_sf)
+importFrom(stars,read_stars)
 importFrom(stringr,str_detect)

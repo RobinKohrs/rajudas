@@ -7,7 +7,7 @@
 
 zamg_sendRequest = function(url){
 
-  cli::cli_h2(glue("Sending requet to: {url}"))
+  cli::cli_h2(glue("Sending request to: {url}"))
 
   # send request
   rawResponse = httr::GET(url)
