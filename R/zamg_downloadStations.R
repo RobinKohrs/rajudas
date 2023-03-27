@@ -31,7 +31,7 @@ zamg_downloadStations = function(url = "https://dataset.api.hub.zamg.ac.at/v1/st
     return(df)
   }) %>% do.call("rbind", .)
 
-  stations = st_as_sf(stations, coords = c("lat", "lon"), crs=4326)
+  stations = st_as_sf(stations, coords = c("lon", "lat"), crs=4326)
 
   if (!is.null(outputPath)) {
     cli::cli_h2("Writing data...")
