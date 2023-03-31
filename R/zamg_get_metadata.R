@@ -5,8 +5,8 @@
 #' @export
 
 
-zamg_getStationVariables = function(
-    url = "https://dataset.api.hub.zamg.ac.at/v1/station/historical/klima-v1-1d/metadata",
+zamg_get_metadata = function(
+    dataset = "1d",
     outputPath = NULL
 
 ){
@@ -16,6 +16,8 @@ zamg_getStationVariables = function(
       return(df)
     }
   }
+
+  url = glue("https://dataset.api.hub.zamg.ac.at/v1/station/historical/klima-v1-{dataset}/metadata")
 
 
   cli::cli_h2("Downloading meta data...")

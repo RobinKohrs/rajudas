@@ -36,7 +36,7 @@ zamg_get_point_data = function(
 
 
   # build the url -----------------------------------------------------------
-  url = glue("https://dataset.api.hub.zamg.ac.at/v1/station/historical/klima-v1-{dataset}?parameters={parameters}&start={start}T08:00&end={end}&station_ids={stationId}")
+  url = glue("https://dataset.api.hub.zamg.ac.at/v1/station/historical/klima-v1-{dataset}?parameters={parameters}&start={start}&end={end}&station_ids={stationId}")
 
 
   # download the data -------------------------------------------------------
