@@ -14,7 +14,7 @@
 #' @importFrom stars read_stars
 
 #' @export
-zamg_download1x1 = function(
+zamg_get_1x1 = function(
     format = "netcdf",
     parameter = NULL,
                             start_date = as.Date("2023-03-20"),

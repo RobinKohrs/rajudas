@@ -5,7 +5,7 @@
 #' @export
 
 
-zamg_getPointData = function(
+zamg_get_point_data = function(
   dataset = "1d",
   stationId = NULL,
   parameters = NULL,

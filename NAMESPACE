@@ -2,10 +2,10 @@
 
 export("%>%")
 export(makePath)
-export(zamg_download1x1)
-export(zamg_getPointData)
 export(zamg_getStationVariables)
-export(zamg_get_Stations)
+export(zamg_get_1x1)
+export(zamg_get_point_data)
+export(zamg_get_stations)
 import(glue)
 import(httr)
 import(tidyverse)
