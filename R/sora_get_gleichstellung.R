@@ -1,7 +1,7 @@
 #' Get the gleichstellungsindex values
 #'
 #' @param url Url to the xlsx file at the sora page
-#' @export
+@export
 
 
 sora_get_gleichstellung = function(url="https://www.sora.at/fileadmin/downloads/projekte/2022_SORA_Datensatz_Staedtebund_Gleichstellungsindex_2021_Dimensionsindizes.xlsx"){
