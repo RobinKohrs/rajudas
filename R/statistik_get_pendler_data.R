@@ -1,7 +1,7 @@
 #' get the pendler saldo for a gemeinde to all other gemeinden
 #'
-#'
 #' @export
+
 statistik_get_pendler_data = function(gkz, year=2020, no_binnenpendler = T){
 
   # url
@@ -29,8 +29,6 @@ statistik_get_pendler_data = function(gkz, year=2020, no_binnenpendler = T){
     props = props %>%
       filter(dest_gkz != gkz)
   }
-
-
 
 
   return(props)

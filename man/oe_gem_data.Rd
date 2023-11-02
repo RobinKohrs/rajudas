@@ -8,7 +8,8 @@ oe_gem_data(
   year = 2023,
   base_url = "https://data.statistik.gv.at/data/OGDEXT_GEM_1_STATISTIK_AUSTRIA_",
   dest_file = NULL,
-  dest_dir = tempdir()
+  dest_dir = tempdir(),
+  wien_union = F
 )
 }
 \arguments{
