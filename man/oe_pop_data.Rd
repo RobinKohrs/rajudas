@@ -5,9 +5,17 @@
 \title{get population data for Austrian gemeinden}
 \usage{
 oe_pop_data(
+  years = NULL,
+  admin = "gemeinden",
   url =
-    "https://www.statistik.at/fileadmin/pages/405/Bev_zu_Jahresbeginn_Gebietseinheiten_Zeitreihe.ods"
+    "https://www.statistik.at/fileadmin/pages/405/Bev_zu_Jahresbeginn_Gebietseinheiten_Zeitreihe.ods",
+  wien_union = F
 )
+}
+\arguments{
+\item{admin}{Either (g=gemeinde | b=bezirk | bl=bundesland | n=Nuts)}
+
+\item{wien_union}{If adming=g, if the wiener bezirke should be unioned or not}
 }
 \description{
 get population data for Austrian gemeinden

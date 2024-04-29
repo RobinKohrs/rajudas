@@ -9,7 +9,8 @@ oe_gem_data(
   base_url = "https://data.statistik.gv.at/data/OGDEXT_GEM_1_STATISTIK_AUSTRIA_",
   dest_file = NULL,
   dest_dir = tempdir(),
-  wien_union = F
+  wien_union = F,
+  force = F
 )
 }
 \arguments{

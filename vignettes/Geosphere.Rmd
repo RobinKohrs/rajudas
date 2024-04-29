@@ -1,0 +1,84 @@
+---
+title: "Geosphere"
+output: 
+  rmarkdown::html_vignette:
+    toc: true
+    toc_depth: 4
+vignette: >
+  %\VignetteIndexEntry{Geosphere}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(rajudas)
+library(DT)
+```
+
+In dem Paket gibt es einige Funktionen um die Daten der [geosphere](https://data.hub.geosphere.at/) zu verwenden. Die wichtigsten sollen hier vorgestellt werden!
+
+# Die API der Geosphere
+
+Der Basis-Link [der API der Geosphere](https://dataset.api.hub.geosphere.at/v1/docs/) ist:
+
+<div style="font-size: 1.5rem;">https://dataset.api.hub.geosphere.at</div>
+
+Anschließend werden:
+
+- die **Version** -  derweil immer `v1`
+
+- der **[Typ](https://dataset.api.hub.geosphere.at/v1/docs/user-guide/type.html#types)** -`grid` | `timeseries` | `station`
+
+- der **[der Modus](https://dataset.api.hub.geosphere.at/v1/docs/user-guide/mode.html#modes)** -`historical` | `current` | `forcast`
+
+- die **[Ressource-ID](https://dataset.api.hub.geosphere.at/v1/docs/user-guide/resource.html#resources)** `apolis_short-v1-1d-100m` | `inca-v1-1h-1km`...
+
+definiert, damit sich sowas `<host>/<version>/<type>/<mode>/<resource_id>` ergibt!
+
+Hintenran kommen dann nur noch die Parameter (welche für jede Ressource unterschiedich sind!)
+
+# Datasets-Übsersicht
+
+Die Datasets (oder Ressourcen) beschreiben eigentlich alle verfügbaren Datensaätze die über die API abgefragt werden können! Es gibt drei Wege dies zu tun:
+
+1. [Über die API-Docs und den Ressourcen-Reiter](https://dataset.api.hub.geosphere.at/v1/docs/user-guide/resource.html)
+
+2. [Über den API-Endpunkt zu allen Datasets](https://dataset.api.hub.geosphere.at/v1/datasets)
+
+3. Über die Funktion `geosphere_get_datasets()` in diesem Paket
+
+```{r}
+ds = rajudas::geosphere_get_datasets()
+datatable(ds)
+```
+# Dataset-Page
+
+Auf der eigentlichen Seite eines Datasets können die Namen der notwendigen Paramter abgelesen werden. So hat zB die Ressouce `https://dataset.api.hub.geosphere.at/v1/station/historical/klima-v1-1d` die notwendigen Parameter:
+
+- parameters
+
+- start
+
+- end
+
+- station_ids
+
+Wie diese Werte genau aussehen erfährt man durch ausprobieren oder hier:
+
+<div style="font-size: 1.5rem;">https://dataset.api.hub.geosphere.at/v1/openapi-docs#/</div>
+
+
+
+
+# Dataset-Metdata
+
+
+
+

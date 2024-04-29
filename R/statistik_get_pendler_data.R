@@ -5,7 +5,7 @@
 statistik_get_pendler_data = function(gkz, year=2020, no_binnenpendler = T){
 
   # url
-  url = glue("https://www.statistik.at/gs-atlas/ATLAS_PENDLER/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=ATLAS_PENDLER:ATLAS_PENDLER_SALDO_LIST_GEM&outputFormat=application%2Fjson&viewparams=GKZ:{gkz};DATE:{year}-10-31;THRESH_ABS:0")
+  url = glue::glue("https://www.statistik.at/gs-atlas/ATLAS_PENDLER/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=ATLAS_PENDLER:ATLAS_PENDLER_SALDO_LIST_GEM&outputFormat=application%2Fjson&viewparams=GKZ:{gkz};DATE:{year}-10-31;THRESH_ABS:0")
   cli::cli_inform(glue("URL:\n{url}"))
 
   # raw data

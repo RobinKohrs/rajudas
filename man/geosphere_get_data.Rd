@@ -2,7 +2,7 @@
 % Please edit documentation in R/geosphere_get_data.R
 \name{geosphere_get_data}
 \alias{geosphere_get_data}
-\title{Get geosphere data}
+\title{Get data from geosphere data}
 \usage{
 geosphere_get_data(
   ...,
@@ -15,8 +15,46 @@ geosphere_get_data(
 )
 }
 \arguments{
+\item{...}{Parameters for that specific endpoint}
+
+\item{api_url}{The base url to the server of geosphere. Check \link\href{https://dataset.api.hub.geosphere.at/v1/docs/getting-started.html}{here}}
+
+\item{version}{The version of the api. By default \code{"v1"}.}
+
+\item{type}{Either \code{"grid"}, \code{"timeseries"} or \code{"station"}}
+
+\item{mode}{Either \code{"historical"}, \code{"current"} or \code{"forecast"}}
+
+\item{resource_id}{One listed \link\href{https://dataset.api.hub.geosphere.at/v1/docs/user-guide/resource.html#resources}{here} or
+\link\href{https://dataset.api.hub.geosphere.at/v1/datasets}{here}}
+
 \item{output_file}{}
 }
+\value{
+The file to where the data was saved
+}
 \description{
-Get geosphere data
+From the arguments \code{api_url}, \code{version}, \code{type}, \code{mode} and \code{ressource_id} a
+url is constructed as described \link\href{https://dataset.api.hub.geosphere.at/v1/docs/getting-started.html}{here}.
+In \code{...}-argument must be specified the parameters for each endpoint. These parameters are a little tricky, but can
+roughly be found partially in the \link\href{https://dataset.api.hub.geosphere.at/v1/timeseries/historical/spartacus-v2-1m-1km}{base-url}
+of the endpoint and the corresponding \link\href{https://dataset.api.hub.geosphere.at/v1/timeseries/historical/spartacus-v2-1m-1km/metadata}{metadata-page}
+for that endpoint. To my undestanding the url-paramter-names are int he base-url and the options they can
+take are in the metadata-page
+}
+\examples{
+{
+ path_data = rajudas::geosphere_get_data(
+  list(
+    parameters = c("tl_mittel"),
+    start = start,
+    end = end,
+    station_ids = id,
+    output_format = "csv"
+  ),
+  type = "station",
+  mode = "historical",
+  resource_id = "klima-v2-1m"
+)}
+
 }
