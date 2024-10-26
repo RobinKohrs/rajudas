@@ -5,7 +5,7 @@
 
 
 #' @export
-geosphere_get_stations = function(url = "https://dataset.api.hub.zamg.ac.at/v1/station/historical/klima-v1-1d/metadata",
+geosphere_get_stations = function(url = "https://dataset.api.hub.zamg.ac.at/v1/station/historical/klima-v2-1d/metadata",
                                 outputPath = NULL) {
 
 

@@ -5,7 +5,7 @@
 \title{Download all the avaiable stations for the ZAMG daily products}
 \usage{
 geosphere_get_stations(
-  url = "https://dataset.api.hub.zamg.ac.at/v1/station/historical/klima-v1-1d/metadata",
+  url = "https://dataset.api.hub.zamg.ac.at/v1/station/historical/klima-v2-1d/metadata",
   outputPath = NULL
 )
 }

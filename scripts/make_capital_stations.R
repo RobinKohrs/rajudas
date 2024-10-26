@@ -28,12 +28,6 @@ stations_in_lhs_active %>%
   filter(valid_from == min(valid_from)) -> geosphere_stations_in_lhs
 
 
-
-# filter ------------------------------------------------------------------
-
-
-
-
 # save to package ---------------------------------------------------------
 usethis::use_data(geosphere_stations_in_lhs, overwrite = T)
 

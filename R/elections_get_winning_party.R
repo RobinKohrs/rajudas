@@ -15,11 +15,10 @@
 #' @examples
 elections_get_winning_party_wide = function(df, cols, col_name_winning_party = "winning_party", col_name_winning_val="winning_val"){
   df %>%
-    slice_head(n=20) %>%
     rowwise() %>%
     mutate(
       "{col_name_winning_party}" := names(.)[map(names(df), ~.x%in%cols) %>% unlist][which.max(c_across(cols))],
-      "{col_name_winning_val}" := max(c_across(cols))
+      "{col_name_winning_val}" := max(c_across(cols), na.rm = T)
     ) -> df
 
   df
