@@ -2,7 +2,10 @@
 
 export("%>%")
 export(artic_sea_ice)
+export(co2_get_global_data)
+export(co2_get_keeling_data)
 export(create_quarto_starter)
+export(dst_get_my_articles)
 export(election_make_tooltips)
 export(elections_get_winning_party_wide)
 export(geosphere_get_data)
